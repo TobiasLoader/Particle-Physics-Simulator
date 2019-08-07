@@ -74,7 +74,7 @@ function setup() {
     p.push({x:random(W/4,3*W/4),y:random(H/4,3*H/4),vx:0,vy:0,ax:0,ay:0,KEx:random(-1,1),KEy:random(-1,1),m:18,type:'p'});    
 	}
 	for (var n=0; n<nNum; n+=1){
-	    p.push({x:random(W/4,3*W/4),y:random(H/4,3*H/4),vx:0,vy:0,ax:0,ay:0,KEx:random(-1,1),KEy:random(-1,1),m:22,type:'n'});    
+	  p.push({x:random(W/4,3*W/4),y:random(H/4,3*H/4),vx:0,vy:0,ax:0,ay:0,KEx:random(-1,1),KEy:random(-1,1),m:22,type:'n'});    
 	}
 	
 	canvas = createCanvas(W, H);
@@ -127,12 +127,46 @@ function mouseClicked(){
 		    }
 	    } else if (mouseY>12*H/40-15/2+80 && mouseY<12*H/40+15/2+80){
 		    if (showParticles){
-		        showParticles = false; 
+		      showParticles = false;		    
 		    } else {
-		        showParticles = true;    
+		      showParticles = true;    
 		    }
 	    }
     }
+    if (mouseY>34*H/40-5 && mouseY<34*H/40+5){
+	    if (mouseX>19*W/20-15-23 && mouseX<19*W/20-15-15){
+		    if (nNum>0){
+			  	for (var particle=0; particle<p.length;particle+=1){
+				  	if (p[particle].type === 'n'){
+					  	p.splice(particle,1);
+					  	break
+				  	}
+			  	}
+			  	nNum -= 1;
+		  	}
+		  }
+			if (mouseX>19*W/20-15+15 && mouseX<19*W/20-15+23){
+				p.push({x:random(W/4,3*W/4),y:random(H/4,3*H/4),vx:0,vy:0,ax:0,ay:0,KEx:random(-1,1),KEy:random(-1,1),m:22,type:'n'});
+				nNum += 1;
+			}
+		}
+		if (mouseY>35*H/40+10-5 && mouseY<35*H/40+10+5){
+	    if (mouseX>19*W/20-15-23 && mouseX<19*W/20-15-15){
+		    if (pNum>0){
+			  	for (var particle=0; particle<p.length;particle+=1){
+				  	if (p[particle].type === 'p'){
+					  	p.splice(particle,1);
+					  	break
+				  	}
+			  	}
+			  	pNum -= 1;
+		  	}
+		  }
+			if (mouseX>19*W/20-15+15 && mouseX<19*W/20-15+23){
+				p.push({x:random(W/4,3*W/4),y:random(H/4,3*H/4),vx:0,vy:0,ax:0,ay:0,KEx:random(-1,1),KEy:random(-1,1),m:18,type:'p'});
+				pNum += 1;
+			}
+		}
 }
 
 function keyPressed(){

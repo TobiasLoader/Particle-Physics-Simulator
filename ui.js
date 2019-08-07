@@ -32,16 +32,44 @@ function tickBox(X,Y,TEXT,ticked){
 	}
 }
 
+function slider(X,Y,TEXT,VAR,C){
+	textFont("Courier",15);
+	noStroke();
+	textAlign(RIGHT,CENTER);
+	
+	fill(255,255,255,150);
+	text(TEXT,X-50, Y);
+	textAlign(CENTER,CENTER);
+	fill(C[0], C[1], C[2]);
+	text(VAR,X, Y);
+	noFill();
+	stroke(C[0], C[1], C[2],150);
+	if (mouseX>X-23 && mouseX<X-15 && mouseY>Y-5 && mouseY<Y+5){
+		strokeWeight(2);
+	} else {
+		strokeWeight(1);
+	}
+	line(X-23,Y,X-15,Y-5);
+	line(X-23,Y,X-15,Y+5);
+	
+	if (mouseX>X+15 && mouseX<X+23 && mouseY>Y-5 && mouseY<Y+5){
+		strokeWeight(2);
+	} else {
+		strokeWeight(1);
+	}
+	line(X+23,Y,X+15,Y-5);
+	line(X+23,Y,X+15,Y+5);
+}
+
 function button(X,Y,TEXT){
 	stroke(255);
 	strokeWeight(0.5);
 	fill(109, 113, 163);
+	rectMode(CENTER);
 	rect(X-50,Y,175,50,1);
 	textFont("Courier",20);
 	noStroke();
 	textAlign(CENTER,CENTER);
-	
-	
 	fill(255,255,255,200);
 	text(TEXT,X-50, Y);
 	
@@ -57,6 +85,9 @@ function customisableOptions(){
 	}
 	tickBox(19*W/20-30,11*H/40+70,"Show Graphs",showGraphs);
 	tickBox(19*W/20-30,12*H/40+80,"Show Particles",showParticles);
+	
+	slider(19*W/20-15,34*H/40,'Neutrons:',nNum,[194,247,255]);
+	slider(19*W/20-15,35*H/40+10,'Protons:',pNum,[255, 176, 176]);
 
 }
 
