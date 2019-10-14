@@ -8,7 +8,7 @@ function drawMessage(){
 	opacity = 180*sin(t);
 	
 	fill(255,255,255,opacity);
-	text("please press 'I' to view instructions",W/2, 9*H/10);
+	text("please press the 'D' key for description",W/2, 9*H/10);
 	
 	fill(255,255,255,-opacity);
 	text("Tobias Loader",W/2, 9*H/10);
