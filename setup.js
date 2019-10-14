@@ -92,9 +92,9 @@ function zoom(){
 
 function mouseWheel(event) {
 	if (event.delta>0){
-		scaleSize *= 1 + event.delta/1000;
+		scaleSize /= 1 + event.delta/1000;
 	} else if (event.delta<0){
-		scaleSize /= 1 - event.delta/1000;
+		scaleSize *= 1 - event.delta/1000;
 	}
 }
 
@@ -176,8 +176,8 @@ function keyPressed(){
     if (keyCode === 40){
         zOut = true;
     }
-    if (keyCode === 72){
-        alert("\nWhat's this?\n\nA cluster of sub-atomic particles is loosely modelled by simulating their interactions with each other via the strong and electromagnetic forces. The blue particles represent larger neutrla particles such as neutrons, whilst the slightly smaller charged red particles behave like protons.\n\nUsage Instructions...\n\nEvery time the page is loaded, the particles' positions are randomly generated. Click the PLAY button to start the simulation, then the pause button to stop it. You can untick any of the check boxes to observe simulation with or without these features. You can also zoom in or out using the up or down arrow keys or by scrolling, and you can move around by dragging.\n\nThe Graphs\n\nThe BLUE graph represents the strong interaction between particles and the RED graph, the electromagnetic repulsion. Above the x-axis is repulsion, below is attraction.\n");
+    if (keyCode === 73){
+        alert("\nWhat's this?\n\nA cluster of sub-atomic particles is (loosely) modelled by simulating their interactions with each other via the strong and electromagnetic forces. The larger blue circles represent neutral neutrons, whilst the smaller red circles represent positively charged protons.\n\nUsage Instructions...\n\nEvery time the page is loaded, the particles' positions are randomly generated. Click the PLAY button to start the simulation, then the pause button to stop it. You can untick any of the check boxes to observe simulation with or without these features, and adjust the number of each particle via the arrows controls. You can also zoom in or out using the up or down arrow keys or by scrolling, and you can move the entire cluster around by dragging it.\n\nThe Graphs\n\nThe BLUE graph represents the strong interaction between particles and the RED graph, the electromagnetic repulsion. As per convention, above the x-axis is repulsion, below is attraction.\n");
     }
 }
 

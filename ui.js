@@ -4,14 +4,14 @@ function drawMessage(){
 	noStroke();
 	textAlign(CENTER,CENTER);
 	
-	t = millis()/1000;
-	opacity = 100*sin(t)*(10/(t+10));
+	t = millis()/2000;
+	opacity = 180*sin(t);
 	
 	fill(255,255,255,opacity);
-	text("press H for help.",W/2, 9*H/10);
+	text("please press 'I' to view instructions",W/2, 9*H/10);
 	
 	fill(255,255,255,-opacity);
-	text("hope you like my Particle Simulator. :)",W/2, 9*H/10);
+	text("Tobias Loader",W/2, 9*H/10);
 }
 
 function tickBox(X,Y,TEXT,ticked){
