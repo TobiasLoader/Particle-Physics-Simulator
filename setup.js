@@ -176,7 +176,7 @@ function keyPressed(){
     if (keyCode === 40){
         zOut = true;
     }
-    if (keyCode === 73){
+    if (keyCode === 68){
         alert("\nWhat's this?\n\nA cluster of sub-atomic particles is (loosely) modelled by simulating their interactions with each other via the strong and electromagnetic forces. The larger blue circles represent neutral neutrons, whilst the smaller red circles represent positively charged protons.\n\nUsage Instructions...\n\nEvery time the page is loaded, the particles' positions are randomly generated. Click the PLAY button to start the simulation, then the pause button to stop it. You can untick any of the check boxes to observe simulation with or without these features, and adjust the number of each particle via the arrows controls. You can also zoom in or out using the up or down arrow keys or by scrolling, and you can move the entire cluster around by dragging it.\n\nThe Graphs\n\nThe BLUE graph represents the strong interaction between particles and the RED graph, the electromagnetic repulsion. As per convention, above the x-axis is repulsion, below is attraction.\n");
     }
 }
